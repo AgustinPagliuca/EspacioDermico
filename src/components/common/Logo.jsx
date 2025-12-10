@@ -7,7 +7,7 @@ const Logo = ({ size = 48, showText = false, className = '' }) => {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <img 
-        src="/logoRedondo.png" 
+        src={`${import.meta.env.BASE_URL}logoRedondo.png`} 
         alt="Espacio Dérmico" 
         style={{ height: size }}
         className="object-contain"
@@ -20,7 +20,7 @@ const Logo = ({ size = 48, showText = false, className = '' }) => {
 export const LogoIcon = ({ size = 48, className = '' }) => {
   return (
     <img 
-      src="/logoRedondo.png" 
+      src={`${import.meta.env.BASE_URL}logoRedondo.png`} 
       alt="Espacio Dérmico" 
       style={{ height: size }}
       className={`object-contain ${className}`}

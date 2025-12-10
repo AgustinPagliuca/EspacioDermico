@@ -77,9 +77,8 @@ const Navbar = () => {
       // Si ya estamos en inicio, solo scroll
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
-      // Si no estamos en inicio, navega a home (el scroll al top pasará automáticamente)
-      // Por el hook useScrollToTop
-      window.location.href = '/'
+      // Con HashRouter, cambiamos el hash para navegar a la ruta raíz
+      window.location.hash = '#/'
     }
   }
 
@@ -99,7 +98,7 @@ const Navbar = () => {
             className="flex items-center gap-3 transition-all duration-500 hover:opacity-80 cursor-pointer border-0 bg-transparent p-0"
           >
             <img 
-              src="/logoSolo.png" 
+              src={`${import.meta.env.BASE_URL}logoSolo.png`} 
               alt="Espacio Dérmico - Estética & Bienestar" 
               className={`transition-all duration-500 ${
                 scrolled || !isHomePage ? 'h-12' : 'h-14 sm:h-16'
@@ -246,7 +245,7 @@ const Navbar = () => {
             {/* Logo in mobile menu */}
             <div className="flex items-center justify-center mb-8 pb-6 border-b border-primary-200">
               <img 
-                src="/logoRedondo.png" 
+                src={`${import.meta.env.BASE_URL}logoRedondo.png`} 
                 alt="Espacio Dérmico" 
                 className="h-20"
               />
