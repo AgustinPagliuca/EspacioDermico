@@ -7,8 +7,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Estos colores se mantienen como fallback
-        // Los colores principales se definen en src/colores.css
         primary: {
           50: '#FDFCFB',
           100: '#FAF8F6',

@@ -14,7 +14,6 @@ import AboutMe from './pages/AboutMe'
 import Contact from './pages/Contact'
 
 function App() {
-  // Scroll al top cuando cambia la ruta
   useScrollToTop()
 
   return (

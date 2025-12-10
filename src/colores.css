@@ -1,14 +1,3 @@
-/* ╔═══════════════════════════════════════════════════════════════════╗
-   ║                                                                   ║
-   ║   🎨 ARCHIVO DE COLORES - ESPACIO DÉRMICO                        ║
-   ║                                                                   ║
-   ║   Para cambiar los colores del sitio, modificá los valores       ║
-   ║   hexadecimales (#XXXXXX) de abajo.                              ║
-   ║                                                                   ║
-   ║   Después de guardar, refrescá la página del navegador.          ║
-   ║                                                                   ║
-   ╚═══════════════════════════════════════════════════════════════════╝ */
-
 :root {
   /* ═══════════════════════════════════════════════════════════════════
      COLOR PRINCIPAL 
@@ -37,39 +26,3 @@
   --color-text-light: #8B7355;        /* Texto secundario */
   --color-text-muted: #B8A090;        /* Texto suave */
 }
-
-/* ═══════════════════════════════════════════════════════════════════════
-   
-   EJEMPLOS DE PALETAS ALTERNATIVAS:
-   
-   ► ROSA/FUCSIA:
-     --color-primary: #E91E63;
-     --color-primary-light: #F06292;
-     --color-primary-dark: #C2185B;
-     --color-primary-darker: #880E4F;
-   
-   ► VERDE ESMERALDA:
-     --color-primary: #2E7D32;
-     --color-primary-light: #4CAF50;
-     --color-primary-dark: #1B5E20;
-     --color-primary-darker: #0D3D0F;
-   
-   ► AZUL MARINO:
-     --color-primary: #1565C0;
-     --color-primary-light: #42A5F5;
-     --color-primary-dark: #0D47A1;
-     --color-primary-darker: #0A3069;
-   
-   ► DORADO:
-     --color-primary: #D4AF37;
-     --color-primary-light: #E6C860;
-     --color-primary-dark: #B8960C;
-     --color-primary-darker: #8B7500;
-   
-   ► BORGOÑA/VINO:
-     --color-primary: #722F37;
-     --color-primary-light: #9C4850;
-     --color-primary-dark: #5A252C;
-     --color-primary-darker: #3D1A1E;
-
-   ═══════════════════════════════════════════════════════════════════════ */
