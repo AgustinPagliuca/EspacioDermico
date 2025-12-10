@@ -136,22 +136,39 @@ Editar `src/colores.css` - Solo modifica los valores hexadecimales (#XXXXXX). La
 
 ## 🌐 Despliegue
 
-### Netlify (Recomendado)
+### GitHub Pages (Recomendado)
+El proyecto está configurado para desplegarse automáticamente en GitHub Pages.
+
+#### Configuración inicial (una sola vez):
+1. En tu repositorio de GitHub, ve a **Settings → Pages**
+2. En **Source**, selecciona **Deploy from a branch**
+3. Selecciona la rama **`gh-pages`** y directorio `/ (root)`
+4. Guarda los cambios
+
+#### Deploy automático:
+1. Solo necesitas hacer `git push` a la rama `main`
+2. GitHub Actions compilará el proyecto automáticamente
+3. Se desplegará en: `https://AgustinPagliuca.github.io/EspacioDermico/`
+
+#### Comandos para subir cambios:
+```bash
+git add .
+git commit -m "Descripción del cambio"
+git push origin main
+```
+
+Luego verifica en **Actions** que el workflow se ejecutó correctamente.
+
+### Netlify (Alternativo)
 1. Conectar repositorio GitHub a Netlify
 2. Build command: `npm run build`
 3. Publish directory: `dist`
 4. El sitio se despliega automáticamente con cada push
 
-### Vercel
+### Vercel (Alternativo)
 1. Importar proyecto desde GitHub a Vercel
 2. Configuración automática
 3. Deploy automático en cada push
-2. Framework preset: Vite
-3. Deploy automático
-
-### Hosting tradicional
-1. Ejecutar `npm run build`
-2. Subir contenido de `dist/` al servidor
 
 ## 📱 Características
 
