@@ -28,6 +28,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Copy public assets to dist
+        run: |
+          cp public/logoRedondo.png dist/
+          cp public/logoSolo.png dist/
+          cp public/favicon.svg dist/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
