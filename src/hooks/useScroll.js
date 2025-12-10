@@ -62,4 +62,4 @@ export function useInView(options = {}) {
   return { ref: setRef, isVisible }
 }
 
-export default useScroll
+// Removed default export because we use named exports for `useScroll` and `useInView`.
