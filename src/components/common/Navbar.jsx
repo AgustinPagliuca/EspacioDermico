@@ -104,8 +104,8 @@ const Navbar = () => {
                 scrolled || !isHomePage ? 'h-12' : 'h-14 sm:h-16'
               }`}
             />
-            <div className={`hidden sm:block transition-all duration-500 ${getBrandTextColorClass()}`}>
-              <p className="text-xs tracking-widest font-light leading-none">
+            <div className={`block transition-all duration-500 ${getBrandTextColorClass()}`}>
+              <p className="text-[11px] sm:text-xs tracking-widest font-light leading-none">
                 ESPACIO DÉRMICO
               </p>
               <p className="text-[9px] tracking-widest font-light mt-0.5 opacity-70">
@@ -243,12 +243,16 @@ const Navbar = () => {
 
           <div className="p-6 pt-16 h-full overflow-y-auto">
             {/* Logo in mobile menu */}
-            <div className="flex items-center justify-center mb-8 pb-6 border-b border-primary-200">
+            <div className="flex items-center justify-center mb-8 pb-6 border-b border-primary-200 gap-3">
               <img 
                 src={`${import.meta.env.BASE_URL}logoRedondo.png`} 
                 alt="Espacio Dérmico" 
-                className="h-20"
+                className="h-14"
               />
+              <div className={`text-center ${getBrandTextColorClass()}`}>
+                <p className="text-[11px] font-light tracking-widest leading-none">ESPACIO DÉRMICO</p>
+                <p className="text-[9px] font-light opacity-70">ESTÉTICA & BIENESTAR</p>
+              </div>
             </div>
 
             {/* Mobile Nav Links */}
