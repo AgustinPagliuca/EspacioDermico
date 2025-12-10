@@ -1,0 +1,137 @@
+import { Link } from 'react-router-dom'
+import { ArrowRight, Phone } from 'lucide-react'
+
+// Components
+import HeroCarousel from '../components/home/HeroCarousel'
+import QuoteSection from '../components/home/QuoteSection'
+import ConsultaBanner from '../components/home/ConsultaBanner'
+import SectionHeader from '../components/common/SectionHeader'
+import ServiceCard from '../components/services/ServiceCard'
+
+// Data
+import { services, contactInfo, aboutInfo } from '../data/services'
+
+// Hook
+import { useInView } from '../hooks/useScroll'
+
+// Animated wrapper component
+const AnimatedSection = ({ children, className = '', delay = 0 }) => {
+  const { ref, isVisible } = useInView()
+  
+  return (
+    <div 
+      ref={ref}
+      className={`transition-all duration-700 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      } ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  )
+}
+
+const Home = () => {
+  return (
+    <div className="overflow-hidden">
+      {/* Hero Carousel */}
+      <HeroCarousel />
+
+      {/* Services Section */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <SectionHeader
+            title="Nuestros Servicios"
+            subtitle="Tratamientos profesionales para tu cuidado personal"
+          />
+
+          {/* Services Grid - Simplificado */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.slice(0, 6).map((service, index) => (
+              <AnimatedSection key={service.id} delay={index * 100}>
+                <ServiceCard service={service} />
+              </AnimatedSection>
+            ))}
+          </div>
+
+          {/* View All Button */}
+          <AnimatedSection className="text-center mt-12">
+            <Link to="/servicios" className="btn-secondary">
+              Ver todos los servicios
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <QuoteSection />
+
+      {/* Consulta Banner */}
+      <ConsultaBanner />
+
+      {/* About Preview Section - Simplificado */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <AnimatedSection>
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80"
+                    alt="Espacio Dérmico"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Content */}
+            <AnimatedSection delay={200}>
+              <div>
+                <h2 className="section-title">
+                  Tu espacio de bienestar
+                </h2>
+                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                  {aboutInfo.description}
+                </p>
+                <Link to="/sobre-mi" className="btn-primary">
+                  Conocer más
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Preview - Simplificado */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="section-title">Visitanos</h2>
+            <p className="text-gray-600 mb-8">
+              {contactInfo.address}
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/contacto" className="btn-primary">
+                Ver contacto
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a
+                href={`tel:${contactInfo.phone}`}
+                className="btn-secondary"
+              >
+                <Phone className="w-5 h-5" />
+                Llamar
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default Home

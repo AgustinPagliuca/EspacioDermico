@@ -1,0 +1,444 @@
+@import './colores.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   ESTILOS BASE GLOBALES
+   ============================================ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-alt);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-light);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+
+  /* Selección de texto */
+  ::selection {
+    background: var(--color-primary-light);
+    color: white;
+  }
+}
+
+/* ============================================
+   COMPONENTES REUTILIZABLES
+   ============================================ */
+
+@layer components {
+  /* Botones */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 500;
+    border-radius: 9999px;
+    transition: all 0.3s ease-out;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.15);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: var(--color-primary);
+    font-weight: 500;
+    border: 2px solid var(--color-primary-light);
+    border-radius: 9999px;
+    transition: all 0.3s ease-out;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    border-radius: 9999px;
+    transition: all 0.3s;
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--color-bg-alt);
+  }
+
+  /* Cards */
+  .card {
+    background-color: var(--color-bg-card);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px -2px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+  }
+
+  .card-service {
+    background-color: var(--color-bg-card);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px -2px rgba(0,0,0,0.08);
+    transition: all 0.5s;
+  }
+
+  .card-service:hover {
+    box-shadow: 0 0 40px -10px var(--color-primary);
+    transform: translateY(-8px);
+  }
+
+  /* Secciones */
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Títulos de sección */
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3.5rem;
+    }
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    max-width: 42rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-subtitle {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Links de navegación */
+  .nav-link {
+    position: relative;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: var(--color-primary);
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Quotes */
+  .quote-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    .quote-text {
+      font-size: 1.875rem;
+    }
+  }
+
+  /* Input styles */
+  .input-field {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background-color: white;
+    border: 1px solid var(--color-bg-alt);
+    border-radius: 1rem;
+    color: var(--color-text);
+    transition: all 0.3s;
+  }
+
+  .input-field::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .input-field:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(139, 115, 85, 0.1);
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-bg-alt);
+    color: var(--color-primary-dark);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 9999px;
+  }
+
+  /* Divider decorativo */
+  .divider-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: '';
+    height: 1px;
+    width: 4rem;
+    background-color: var(--color-primary-light);
+  }
+}
+
+/* ============================================
+   UTILIDADES PERSONALIZADAS
+   ============================================ */
+
+@layer utilities {
+  /* Animaciones de entrada */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 0.7s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Gradientes */
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-alt) 50%, white 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, var(--color-bg) 0%, white 100%);
+  }
+
+  /* Overlay suave */
+  .overlay-soft {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent, transparent);
+  }
+
+  /* Texto con gradiente */
+  .text-gradient {
+    background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Efecto de brillo */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Patrón decorativo */
+  .pattern-dots {
+    background-image: radial-gradient(var(--color-primary) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Line clamp para textos largos */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ============================================
+   ANIMACIONES ADICIONALES
+   ============================================ */
+
+/* Navbar scroll animation */
+.navbar-scrolled {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.08);
+}
+
+.navbar-scrolled .nav-logo {
+  transform: scale(0.9);
+}
+
+/* WhatsApp button pulse */
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-btn {
+  animation: whatsapp-pulse 2s infinite;
+}
+
+/* Carousel dots */
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--color-bg-alt);
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  width: 2rem;
+  background: var(--color-primary);
+  border-radius: 9999px;
+}
+
+/* Image zoom on hover */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 0.7s ease-out;
+}
+
+.img-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   CLASES DE COLOR DINÁMICAS
+   ============================================ */
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-primary-light { background-color: var(--color-primary-light); }
+.bg-primary-dark { background-color: var(--color-primary-dark); }
+.bg-primary-darker { background-color: var(--color-primary-darker); }
+.bg-page { background-color: var(--color-bg); }
+.bg-section { background-color: var(--color-bg-alt); }
+
+.text-primary { color: var(--color-primary); }
+.text-primary-light { color: var(--color-primary-light); }
+.text-primary-dark { color: var(--color-primary-dark); }
+.text-main { color: var(--color-text); }
+.text-main-light { color: var(--color-text-light); }
+.text-main-muted { color: var(--color-text-muted); }
+
+.border-primary { border-color: var(--color-primary); }
+.border-primary-light { border-color: var(--color-primary-light); }
