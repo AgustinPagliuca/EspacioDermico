@@ -205,7 +205,7 @@ const Navbar = () => {
             {isMenuOpen ? (
               <X className="w-6 h-6 text-gray-700" />
             ) : (
-              <Menu className={`w-6 h-6 ${scrolled ? 'text-gray-700' : 'text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]'}`} />
+              <Menu className={`w-6 h-6 ${(scrolled || !isHomePage) ? 'text-gray-700' : 'text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]'}`} />
             )}
           </button>
         </div>
@@ -249,7 +249,7 @@ const Navbar = () => {
                 alt="Espacio Dérmico" 
                 className="h-14"
               />
-              <div className={`text-center ${getBrandTextColorClass()}`}>
+              <div className={`text-center ${isMenuOpen ? 'text-gray-800' : getBrandTextColorClass()}`}>
                 <p className="text-[11px] font-light tracking-widest leading-none">ESPACIO DÉRMICO</p>
                 <p className="text-[9px] font-light opacity-70">ESTÉTICA & BIENESTAR</p>
               </div>

@@ -4,24 +4,59 @@ import { heroSlides } from '../../data/services'
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [touchStartX, setTouchStartX] = useState(null)
+  const [touchEndX, setTouchEndX] = useState(null)
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-  }, [])
+  }, [heroSlides.length])
 
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+  }, [heroSlides.length])
+
+  // Autoplay: slightly slower (7s) so slides feel calmer
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000)
+    const interval = setInterval(nextSlide, 7000)
     return () => clearInterval(interval)
   }, [nextSlide])
 
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX)
+    setTouchEndX(null)
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (touchStartX == null || touchEndX == null) return
+    const delta = touchStartX - touchEndX
+    const threshold = 50 // px
+    if (delta > threshold) {
+      nextSlide()
+    } else if (delta < -threshold) {
+      prevSlide()
+    }
+    setTouchStartX(null)
+    setTouchEndX(null)
+  }
+
   return (
-    <section className="relative h-[85vh] min-h-[500px] max-h-[700px] overflow-hidden">
+    <section
+      className="relative h-[85vh] min-h-[500px] max-h-[700px] overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Slides */}
       {heroSlides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-all duration-1000 ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentSlide ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
           }`}
         >
           {/* Background Image */}
@@ -39,7 +74,7 @@ const HeroCarousel = () => {
             <div className="max-w-xl pt-16">
               <h1 
                 className={`font-display text-3xl sm:text-4xl md:text-5xl text-white mb-4 leading-tight
-                            transition-all duration-700 ${
+                            transition-opacity transition-transform duration-700 ease-out ${
                               index === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                             }`}
               >
@@ -48,7 +83,7 @@ const HeroCarousel = () => {
 
               <p 
                 className={`text-white/80 mb-6 max-w-md
-                            transition-all duration-700 delay-100 ${
+                            transition-opacity duration-700 ease-out delay-150 ${
                               index === currentSlide ? 'opacity-100' : 'opacity-0'
                             }`}
               >
@@ -56,8 +91,8 @@ const HeroCarousel = () => {
               </p>
 
               <div 
-                className={`flex flex-wrap gap-3 transition-all duration-700 delay-200 ${
-                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                className={`flex flex-wrap gap-3 transition-opacity transition-transform duration-700 ease-out delay-200 ${
+                  index === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}
               >
                 <Link to={slide.link} className="btn-primary">

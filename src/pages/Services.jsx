@@ -36,7 +36,7 @@ const Services = () => {
   })
 
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         {/* Background */}
@@ -58,8 +58,11 @@ const Services = () => {
             <div className="relative max-w-md mx-auto">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
-                type="text"
+                type="search"
+                id="search"
+                name="search"
                 placeholder="Buscar servicios..."
+                autoComplete="search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="input-field pl-12"

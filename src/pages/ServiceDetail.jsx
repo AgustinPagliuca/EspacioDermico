@@ -21,7 +21,7 @@ const ServiceDetail = () => {
   // Si no existe el servicio, redirigir
   if (!service) {
     return (
-      <div className="pt-32 pb-20 text-center">
+      <div className="pt-16 pb-20 text-center">
         <div className="container-custom">
           <h1 className="text-2xl font-display text-gray-900 mb-4">
             Servicio no encontrado
@@ -43,7 +43,7 @@ const ServiceDetail = () => {
   const otherServices = services.filter(s => s.id !== serviceId).slice(0, 3)
 
   return (
-    <div className="pt-20">
+    <div className="pt-16">
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] max-h-[600px] overflow-hidden">
         {/* Background Image */}

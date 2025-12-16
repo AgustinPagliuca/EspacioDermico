@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MessageCircle, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import { contactInfo } from '../../data/services'
 
 const WhatsAppButton = () => {
@@ -96,13 +96,8 @@ const WhatsAppButton = () => {
       >
         {/* Pulse effect */}
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25"></span>
-        
-        {/* Icon */}
-        <MessageCircle 
-          className={`w-8 h-8 text-white transition-transform duration-300 ${
-            isExpanded ? 'rotate-90 scale-0' : 'rotate-0 scale-100'
-          }`} 
-        />
+
+        {/* WhatsApp Icon: keep only the SVG to avoid duplicate icons */}
         <X 
           className={`absolute w-7 h-7 text-white transition-transform duration-300 ${
             isExpanded ? 'rotate-0 scale-100' : '-rotate-90 scale-0'

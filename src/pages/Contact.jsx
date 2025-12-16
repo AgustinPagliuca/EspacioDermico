@@ -98,7 +98,7 @@ Mis datos de contacto:
     {
       icon: Phone,
       title: 'Teléfono',
-      content: `${contactInfo.phone} / ${contactInfo.landline}`
+      content: `${contactInfo.phone}`,
     },
     {
       icon: Mail,
@@ -222,6 +222,7 @@ Mis datos de contacto:
                           type="text"
                           id="name"
                           name="name"
+                          autoComplete="name"
                           required
                           value={formData.name}
                           onChange={handleChange}
@@ -237,6 +238,7 @@ Mis datos de contacto:
                           type="tel"
                           id="phone"
                           name="phone"
+                          autoComplete="tel"
                           required
                           value={formData.phone}
                           onChange={handleChange}
@@ -254,6 +256,7 @@ Mis datos de contacto:
                         type="email"
                         id="email"
                         name="email"
+                        autoComplete="email"
                         required
                         value={formData.email}
                         onChange={handleChange}
@@ -269,6 +272,7 @@ Mis datos de contacto:
                       <select
                         id="service"
                         name="service"
+                        autoComplete="off"
                         value={formData.service}
                         onChange={handleChange}
                         className="input-field"
@@ -290,6 +294,7 @@ Mis datos de contacto:
                         id="message"
                         name="message"
                         required
+                        autoComplete="off"
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
