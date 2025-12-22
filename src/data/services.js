@@ -289,7 +289,7 @@ export const services = [
 export const contactInfo = {
   phone: '15-6507-2537',
   landline: '4757-4380',
-  whatsapp: 'https://api.whatsapp.com/message/LTCMUGTXAYKSO1?autoload=1&app_absent=0&utm_source=ig',
+  whatsapp: 'https://wa.me/message/LTCMUGTXAYKSO1',
   email: 'espaciodermico@gmail.com',
   address: 'Dr. Carbone 3748, Santos Lugares',
   hours: {
@@ -299,7 +299,7 @@ export const contactInfo = {
   social: {
     facebook: 'https://facebook.com/espaciodermico',
     instagram: 'https://www.instagram.com/elycosmiatra/',
-    whatsapp: 'https://api.whatsapp.com/message/LTCMUGTXAYKSO1?autoload=1&app_absent=0&utm_source=ig'
+    whatsapp: 'https://wa.me/message/LTCMUGTXAYKSO1'
   }
 }
 
