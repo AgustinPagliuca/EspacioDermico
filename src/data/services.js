@@ -4,6 +4,8 @@
 // para agregar, quitar o modificar servicios
 // ============================================
 
+import { images } from '../utils/images'
+
 export const services = [
   {
     id: 'cosmiatria',
@@ -19,28 +21,28 @@ export const services = [
         name: 'Extracciones',
         description: 'Limpieza facial profunda con extracción profesional de impurezas, puntos negros (comedones), miliums. Ideal para mantener la piel libre de obstrucciones.',
         duration: '1:45 hs aprox.',
-        image: './images/extracciones.jpeg'
+        image: images['extracciones.jpeg']
       },
       {
         id: 'acne-piel-sensible',
         name: 'Acné y Piel Sensible/Reactiva',
         description: 'Tratamiento especializado para pieles con tendencia acneica, sensibles o reactivas. Utilizamos productos específicos para calmar, equilibrar y tratar la piel sin agredirla.',
         duration: '1:45 hs aprox.',
-        image: './images/acne.jpg'
+        image: images['acne.jpg']
       },
       {
         id: 'punta-diamante',
         name: 'Punta de Diamante',
         description: 'Microdermoabrasión con punta de diamante para exfoliar las capas superficiales de la piel, estimular la regeneración celular y mejorar la textura y luminosidad.',
         duration: '60mic min aprox.',
-        image: './images/puntaDiamante.jpg'
+        image: images['puntaDiamante.jpg']
       },
       {
         id: 'peelings',
         name: 'Peelings (Invierno y Verano)',
         description: 'Exfoliación química controlada adaptada a cada estación. Los peelings de invierno son más intensos, mientras que los de verano son suaves y seguros para usar con exposición solar moderada.',
         duration: '60 min aprox.',
-        image: './images/peeling.jpg'
+        image: images['peeling.jpg']
       },
       {
         id: 'microneedling',
@@ -51,21 +53,21 @@ export const services = [
           'Con hilos de colágeno reabsorbibles',
           'Con exosomas'
         ],
-        image: './images/microneedling.jpeg'
+        image: images['microneedling.jpeg']
       },
       {
         id: 'radiofrecuencia-facial',
         name: 'Radiofrecuencia Facial',
         description: 'Tecnología que estimula la producción de colágeno mediante calor controlado. Ideal para flacidez, arrugas finas y mejorar la firmeza del rostro.',
         duration: '1:30 hs aprox.',
-        image: './images/radiofrecuencia.jpg'
+        image: images['radiofrecuencia.jpg']
       },
       {
         id: 'tratamiento-espalda',
         name: 'Tratamiento Integral de Espalda',
         description: 'Limpieza profunda de la zona de espalda. Incluye exfoliación, extracción de impurezas, alta frecuencia, hidratación y cuidado específico para esta zona frecuentemente olvidada.',
         duration: '1:30 hs aprox.',
-        image: './images/limpiezaDeEspalda.jpg'
+        image: images['limpiezaDeEspalda.jpg']
       }
     ]
   },
@@ -75,8 +77,8 @@ export const services = [
     shortDescription: 'Última tecnología en lifting sin cirugía con ultrasonido focalizado de alta intensidad.',
     description: 'HIFU (High Intensity Focused Ultrasound) es la tecnología más avanzada para el tratamiento del envejecimiento facial sin cirugía. Mediante ultrasonido focalizado, actúa en las capas profundas de la piel estimulando la producción natural de colágeno.',
     icon: 'Zap',
-    image: './images/hifu.png',
-    heroImage: './images/hifu.png',
+    image: images['hifu.png'],
+    heroImage: images['hifu.png'],
     featured: true,
     badge: 'Última Tecnología',
     treatments: [
@@ -91,7 +93,7 @@ export const services = [
           'Sin tiempo de recuperación',
           'Resultados duraderos'
         ],
-        image: './images/hifu.png'
+        image: images['hifu.png']
       }
     ]
   },
@@ -101,8 +103,8 @@ export const services = [
     shortDescription: 'Cuidado integral de tus pies con tratamientos especializados para cada necesidad.',
     description: 'Servicio profesional de pedicuría que va más allá de lo estético. Tratamos diversas afecciones de los pies con técnicas especializadas, brindando salud y bienestar a esta parte tan importante del cuerpo.',
     icon: 'Footprints',
-    image: './images/pedicuria.png',
-    heroImage: './images/pedicuria.png',
+    image: images['pedicuria.png'],
+    heroImage: images['pedicuria.png'],
     treatments: [
       {
         id: 'pie-diabetico',
@@ -158,15 +160,15 @@ export const services = [
     shortDescription: 'Cuidado y embellecimiento de tus manos con esmaltado tradicional.',
     description: 'Servicio profesional de manicuría que cuida la salud de tus uñas mientras las embellece. Trabajamos con productos de alta calidad para lograr un acabado impecable y duradero.',
     icon: 'Hand',
-    image: './images/manicuria.jpeg',
-    heroImage: './images/manicuria.jpeg',
+    image: images['manicuria.jpeg'],
+    heroImage: images['manicuria.jpeg'],
     treatments: [
       {
         id: 'manicuria-tradicional',
         name: 'Manicuría con Esmalte Tradicional',
         description: 'Servicio completo de manicuría con limado, cutículas, hidratación y esmaltado tradicional en el color de tu elección.',
         duration: '60 min aprox.',
-        image: './images/manicuria.jpeg'
+        image: images['manicuria.jpeg']
       }
     ]
   },
@@ -176,8 +178,8 @@ export const services = [
     shortDescription: 'Sistema español con cera de alta calidad. Servicio unisex para todo el cuerpo.',
     description: 'Ofrecemos depilación con sistema español, utilizando cera de alta calidad que respeta la piel mientras elimina el vello de raíz. Servicio unisex disponible para todas las zonas del cuerpo.',
     icon: 'Feather',
-    image: './images/depilacion.jpeg',
-    heroImage: './images/depilacion.jpeg',
+    image: images['depilacion.jpeg'],
+    heroImage: images['depilacion.jpeg'],
     badge: 'Unisex',
     treatments: [
       {
@@ -195,7 +197,7 @@ export const services = [
           'Espalda',
           'Pecho'
         ],
-        image: './images/depilacionSistemaEspanol.jpg'
+        image: images['depilacionSistemaEspanol.jpg']
       }
     ]
   },
@@ -205,15 +207,15 @@ export const services = [
     shortDescription: 'Dale forma y definición a tus cejas con técnicas profesionales.',
     description: 'Servicio especializado en diseño de cejas. El perfilado define la forma ideal según tu rostro, mientras que el laminado aporta volumen y fijación duradera para cejas perfectas.',
     icon: 'Eye',
-    image: './images/perfiladoLaminadoCejas.jpeg',
-    heroImage: './images/perfiladoLaminadoCejas.jpeg',
+    image: images['perfiladoLaminadoCejas.jpeg'],
+    heroImage: images['perfiladoLaminadoCejas.jpeg'],
     treatments: [
       {
         id: 'perfilado-cejas',
         name: 'Perfilado y Laminado de Cejas',
         description: 'Diseño personalizado de cejas según la morfología de tu rostro. Incluye depilación con pinza y/o cera para lograr la forma perfecta.',
         duration: '45 min aprox.',
-        image: './images/perfiladoLaminadoCejas.jpeg'
+        image: images['perfiladoLaminadoCejas.jpeg']
       }
     ]
   },

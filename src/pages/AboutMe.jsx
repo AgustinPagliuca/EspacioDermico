@@ -7,6 +7,7 @@ import ConsultaBanner from '../components/home/ConsultaBanner'
 
 // Data
 import { aboutInfo, contactInfo } from '../data/services'
+import { images } from '../utils/images'
 
 // Hook
 import { useInView } from '../hooks/useScroll'
@@ -62,7 +63,7 @@ const AboutMe = () => {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                   <img
-                    src="./images/espacioDermico.jpeg"
+                    src={images['espacioDermico.jpeg']}
                     alt="Espacio Dérmico"
                     className="w-full h-full object-cover"
                   />

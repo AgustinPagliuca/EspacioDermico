@@ -13,6 +13,7 @@ import { services, contactInfo, aboutInfo } from '../data/services'
 
 // Hook
 import { useInView } from '../hooks/useScroll'
+import { images } from '../utils/images'
 
 // Animated wrapper component
 const AnimatedSection = ({ children, className = '', delay = 0 }) => {
@@ -79,7 +80,7 @@ const Home = () => {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                   <img
-                    src="./images/espacioDermico.jpeg"
+                    src={images['espacioDermico.jpeg']}
                     alt="Espacio Dérmico"
                     className="w-full h-full object-cover"
                   />
