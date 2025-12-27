@@ -62,7 +62,7 @@ const AboutMe = () => {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
+                    src="./images/espacioDermico.jpeg"
                     alt="Espacio Dérmico"
                     className="w-full h-full object-cover"
                   />

@@ -79,7 +79,7 @@ const Home = () => {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&q=80"
+                    src="./images/espacioDermico.jpeg"
                     alt="Espacio Dérmico"
                     className="w-full h-full object-cover"
                   />
