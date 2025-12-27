@@ -1,11 +1,13 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { heroSlides } from '../../data/services'
+import { images } from '../../utils/images'
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [touchStartX, setTouchStartX] = useState(null)
   const [touchEndX, setTouchEndX] = useState(null)
+  const [isMobile, setIsMobile] = useState(false)
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
@@ -20,6 +22,13 @@ const HeroCarousel = () => {
     const interval = setInterval(nextSlide, 7000)
     return () => clearInterval(interval)
   }, [nextSlide])
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   // Touch handlers for mobile swipe
   const handleTouchStart = (e) => {
@@ -64,7 +73,12 @@ const HeroCarousel = () => {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
+              style={
+                slide.id === 2 && isMobile
+                  ? { objectPosition: '50% 30%' }
+                  : undefined
+              }
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/25 to-transparent" />
           </div>
@@ -72,7 +86,7 @@ const HeroCarousel = () => {
           {/* Content */}
           <div className="relative z-10 h-full container-custom flex items-center">
             <div className="max-w-xl pt-16">
-              <h1 
+              <h1
                 className={`font-display text-3xl sm:text-4xl md:text-5xl text-white mb-4 leading-tight
                             transition-opacity transition-transform duration-700 ease-out ${
                               index === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -81,7 +95,7 @@ const HeroCarousel = () => {
                 {slide.title}
               </h1>
 
-              <p 
+              <p
                 className={`text-white/80 mb-6 max-w-md
                             transition-opacity duration-700 ease-out delay-150 ${
                               index === currentSlide ? 'opacity-100' : 'opacity-0'
@@ -90,7 +104,7 @@ const HeroCarousel = () => {
                 {slide.subtitle}
               </p>
 
-              <div 
+              <div
                 className={`flex flex-wrap gap-3 transition-opacity transition-transform duration-700 ease-out delay-200 ${
                   index === currentSlide ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                 }`}

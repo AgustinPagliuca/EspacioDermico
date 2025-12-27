@@ -340,7 +340,7 @@ export const heroSlides = [
     id: 3,
     title: 'Bienestar Integral',
     subtitle: 'Masajes terapéuticos para cuerpo y mente',
-    image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1400&q=80',
+    image: images['masaje-sedativo.jpg'],
     link: '/servicios/masajes',
     cta: 'Conocer más'
   },
