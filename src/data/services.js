@@ -111,35 +111,35 @@ export const services = [
         name: 'Pie Diabético',
         description: 'Cuidado especializado para personas con diabetes. Tratamiento preventivo y curativo con técnicas específicas para evitar complicaciones.',
         duration: '45-60 min aprox.',
-        image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80'
+        image: images['pie-diabetico.png']
       },
       {
         id: 'unas-encarnadas',
         name: 'Uñas Encarnadas',
         description: 'Tratamiento profesional para uñas encarnadas (onicocriptosis). Alivio del dolor y corrección para evitar recurrencias.',
         duration: '30-45 min aprox.',
-        image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80'
+        image: images['uña-encarnada.jpg']
       },
       {
         id: 'ojo-de-gallo',
         name: 'Ojo de Gallo',
         description: 'Eliminación de helomas interdigitales (ojo de gallo) que causan molestias al caminar. Tratamiento indoloro con resultados inmediatos.',
         duration: '30 min aprox.',
-        image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80'
+        image: images['ojo-de-gallo.png']
       },
       {
         id: 'helomas-plantares',
         name: 'Helomas Plantares',
         description: 'Tratamiento de callosidades plantares profundas. Eliminación del núcleo y asesoramiento para prevenir su reaparición.',
         duration: '30-45 min aprox.',
-        image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80'
+        image: images['helomas-plantares.jpg']
       },
       {
         id: 'talones-agrietados',
         name: 'Talones Agrietados',
         description: 'Tratamiento intensivo para talones secos y agrietados. Incluye exfoliación, hidratación profunda y recomendaciones de cuidado en casa.',
         duration: '45 min aprox.',
-        image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80'
+        image: images['talones-agrietados.jpg']
       },
       {
         id: 'pedicuria-estetica',
@@ -150,7 +150,7 @@ export const services = [
           'Esmalte tradicional',
           'Esmalte semipermanente'
         ],
-        image: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=80'
+        image: images['pedicuria-estetica.jpg']
       }
     ]
   },
@@ -239,7 +239,7 @@ export const services = [
           'Piel suave y renovada',
           'Mejora la absorción de hidratantes'
         ],
-        image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80'
+        image: images['exfoliacion-corporal.jpg']
       }
     ]
   },
@@ -249,22 +249,22 @@ export const services = [
     shortDescription: 'Masajes terapéuticos para aliviar tensiones y promover la relajación.',
     description: 'Servicios de masoterapia para el bienestar físico y mental. Ofrecemos masajes descontracturantes para aliviar tensiones musculares y masajes sedativos para una relajación profunda.',
     icon: 'Heart',
-    image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1200&q=80',
+    image: images['masaje-descontracturante.jpg'],
+    heroImage: images['masaje-descontracturante.jpg'],
     treatments: [
       {
         id: 'masaje-descontracturante',
         name: 'Masaje Descontracturante',
         description: 'Masaje terapéutico de intensidad media-alta enfocado en liberar tensiones musculares, contracturas y nudos. Ideal para personas con dolores de espalda, cuello y hombros.',
         duration: '50-60 min aprox.',
-        image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80'
+        image: images['masaje-descontracturante.jpg']
       },
       {
         id: 'masaje-sedativo',
         name: 'Masaje Sedativo',
         description: 'Masaje suave y envolvente diseñado para inducir un estado de relajación profunda. Reduce el estrés, calma el sistema nervioso y mejora la calidad del sueño.',
         duration: '50-60 min aprox.',
-        image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80'
+        image: images['masaje-sedativo.jpg']
       }
     ]
   }
@@ -275,10 +275,10 @@ export const services = [
 // ============================================
 
 export const contactInfo = {
-  phone: '15-6507-2537',
+  phone: '11-6507-2537',
   landline: '4757-4380',
   whatsapp: 'https://wa.me/message/LTCMUGTXAYKSO1',
-  email: 'espaciodermico@gmail.com',
+  email: 'ely.cosmiatra@gmail.com',
   address: 'Dr. Carbone 3748, Santos Lugares',
   hours: {
     weekdays: 'Martes a Viernes de 9 a 19 hs',
@@ -331,7 +331,7 @@ export const heroSlides = [
     id: 2,
     title: 'HIFU - Lifting sin Cirugía',
     subtitle: 'La última tecnología en rejuvenecimiento facial no invasivo',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=80',
+    image: images['hifu.png'],
     link: '/servicios/hifu',
     cta: 'Descubrir',
     badge: 'Última Tecnología'

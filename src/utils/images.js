@@ -16,6 +16,15 @@ import depilacion from '../images/depilacion.jpeg'
 import depilacionSistemaEspanol from '../images/depilacionSistemaEspanol.jpg'
 import perfiladoLaminadoCejas from '../images/perfiladoLaminadoCejas.jpeg'
 import espacioDermico from '../images/espacioDermico.jpeg'
+import helomasPlantares from '../images/helomas-plantares.jpg'
+import ojoDeGallo from '../images/ojo-de-gallo.png'
+import pedicuriaEstetica from '../images/pedicuria-estetica.jpg'
+import pieDiabetico from '../images/pie-diabetico.png'
+import talonesAgrietados from '../images/talones-agrietados.jpg'
+import unaEncarnada from '../images/uña-encarnada.jpg'
+import exfoliacionCorporal from '../images/exfoliacion-corporal.jpg'
+import masajeDescontracturante from '../images/masaje-descontracturante.jpg'
+import masajeSedativo from '../images/masaje-sedativo.jpg'
 
 let images = {}
 
@@ -42,7 +51,16 @@ if (typeof import.meta.globEager === 'function') {
     'depilacion.jpeg': depilacion,
     'depilacionSistemaEspanol.jpg': depilacionSistemaEspanol,
     'perfiladoLaminadoCejas.jpeg': perfiladoLaminadoCejas,
-    'espacioDermico.jpeg': espacioDermico
+    'espacioDermico.jpeg': espacioDermico,
+    'helomas-plantares.jpg': helomasPlantares,
+    'ojo-de-gallo.png': ojoDeGallo,
+    'pedicuria-estetica.jpg': pedicuriaEstetica,
+    'pie-diabetico.png': pieDiabetico,
+    'talones-agrietados.jpg': talonesAgrietados,
+    'uña-encarnada.jpg': unaEncarnada,
+    'exfoliacion-corporal.jpg': exfoliacionCorporal,
+    'masaje-descontracturante.jpg': masajeDescontracturante,
+    'masaje-sedativo.jpg': masajeSedativo
   }
 }
 

@@ -31,8 +31,8 @@ const AnimatedSection = ({ children, className = '', delay = 0 }) => {
 
 const AboutMe = () => {
   const stats = [
-    { icon: Users, value: '+500', label: 'Clientes satisfechos' },
-    { icon: Star, value: '+10', label: 'Años de experiencia' },
+    { icon: Users, value: '+1500', label: 'Clientes satisfechos' },
+    { icon: Star, value: '+15', label: 'Años de experiencia' },
     { icon: Award, value: '8', label: 'Servicios especializados' },
     { icon: Heart, value: '100%', label: 'Dedicación' },
   ]
@@ -160,7 +160,7 @@ const AboutMe = () => {
                 <div className="space-y-4 pt-8">
                   <div className="aspect-square rounded-2xl overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80"
+                      src={images['depilacion.jpeg']}
                       alt="Espacio de trabajo"
                       className="w-full h-full object-cover"
                     />
