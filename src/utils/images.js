@@ -60,7 +60,8 @@ if (typeof import.meta.globEager === 'function') {
     'uña-encarnada.jpg': unaEncarnada,
     'exfoliacion-corporal.jpg': exfoliacionCorporal,
     'masaje-descontracturante.jpg': masajeDescontracturante,
-    'masaje-sedativo.jpg': masajeSedativo
+    'masaje-sedativo.jpg': masajeSedativo,
+    'cosmiatria.png': cosmiatria
   }
 }
 

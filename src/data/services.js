@@ -13,7 +13,7 @@ export const services = [
     shortDescription: 'Tratamientos faciales profesionales para el cuidado y rejuvenecimiento de tu piel.',
     description: 'La cosmiatría es la especialidad dedicada al cuidado, mantenimiento y embellecimiento de la piel sana. Nuestros tratamientos están diseñados para mejorar la apariencia y salud de tu rostro con técnicas profesionales y productos de alta calidad.',
     icon: 'Sparkles',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
+    image: images['cosmiatria.png'],
     heroImage: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1200&q=80',
     treatments: [
       {
