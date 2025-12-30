@@ -57,6 +57,18 @@ const Home = () => {
       {/* Hero Carousel */}
       <HeroCarousel />
 
+      {/* Intro Local SEO */}
+      <section className="py-12 bg-white">
+        <div className="container-custom max-w-4xl">
+          <h1 className="font-display text-3xl md:text-4xl text-gray-900 mb-4">
+            Centro de estética en Santos Lugares
+          </h1>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            En Espacio Dérmico brindamos cosmiatría, HIFU, depilación y masajes en Santos Lugares, a minutos de Villa Devoto y Tres de Febrero. Atendemos con turno previo y asesoramiento personalizado para que elijas el tratamiento ideal.
+          </p>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">

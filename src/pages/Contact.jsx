@@ -166,6 +166,9 @@ Mis datos de contacto:
               Estamos aquí para responder tus consultas y ayudarte a reservar tu turno. 
               ¡Contáctanos por el medio que prefieras!
             </p>
+            <p className="text-base text-gray-500 mt-4">
+              Atención en Dr. Carbone 3748, Santos Lugares. Fácil acceso desde Tres de Febrero y Villa Devoto.
+            </p>
           </div>
         </div>
       </section>

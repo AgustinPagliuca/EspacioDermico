@@ -36,6 +36,13 @@ function App() {
       addressRegion: 'Buenos Aires',
       addressCountry: 'AR'
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -34.59774065718429,
+      longitude: -58.54686922330102
+    },
+    hasMap: 'https://maps.app.goo.gl/usRz1wWv95WpXZEG8',
+    areaServed: ['Santos Lugares', 'Tres de Febrero', 'Villa Devoto', 'San Martín'],
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',

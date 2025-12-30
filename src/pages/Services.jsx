@@ -139,6 +139,27 @@ const Services = () => {
         </div>
       </section>
 
+      {/* FAQ local */}
+      <section className="py-16 bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="font-display text-2xl md:text-3xl text-gray-900 mb-6">Preguntas frecuentes</h2>
+          <div className="space-y-4 text-gray-700">
+            <div>
+              <p className="font-semibold text-gray-900">¿Dónde están ubicados?</p>
+              <p>Estamos en Dr. Carbone 3748, Santos Lugares, con fácil acceso desde Tres de Febrero y Villa Devoto.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">¿Cómo reservo un turno?</p>
+              <p>Escribinos por WhatsApp al 11-6507-2537 o desde el botón “Reservar” en cada servicio.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-gray-900">¿Qué tratamientos ofrecen?</p>
+              <p>Cosmiatría, HIFU, masajes, depilación, perfilado de cejas, exfoliación corporal, manicuría y pedicuría.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Consulta Banner */}
       <ConsultaBanner />
     </div>

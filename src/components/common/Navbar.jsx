@@ -313,7 +313,7 @@ const Navbar = () => {
                 <span className="w-8 h-8 rounded-full bg-primary-50 flex items-center justify-center">
                   📞
                 </span>
-                15-6507-2537
+                11-6507-2537
               </p>
             </div>
           </div>

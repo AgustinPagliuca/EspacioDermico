@@ -276,7 +276,6 @@ export const services = [
 
 export const contactInfo = {
   phone: '11-6507-2537',
-  landline: '4757-4380',
   whatsapp: 'https://wa.me/message/LTCMUGTXAYKSO1',
   email: 'ely.cosmiatra@gmail.com',
   address: 'Dr. Carbone 3748, Santos Lugares',
