@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/" />
+    <title>Redirigiendo…</title>
+    <script>
+      (function() {
+        var l = window.location;
+        var redirectPath = l.pathname + l.search + l.hash;
+        if (redirectPath.startsWith('/')) {
+          redirectPath = redirectPath.slice(1);
+        }
+        var target = '/?redirect=' + encodeURIComponent('/' + redirectPath);
+        l.replace(target);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirigiendo…</p>
+  </body>
+</html>

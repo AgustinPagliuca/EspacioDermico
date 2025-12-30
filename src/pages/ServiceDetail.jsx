@@ -1,6 +1,7 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { ArrowLeft, Clock, Check, ChevronRight } from 'lucide-react'
 import * as Icons from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 
 // Components
 import ConsultaBanner from '../components/home/ConsultaBanner'
@@ -14,6 +15,8 @@ import { useInView } from '../hooks/useScroll'
 const ServiceDetail = () => {
   const { serviceId } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
+  const SITE_URL = 'https://espaciodermico.com.ar'
   
   // Encontrar el servicio
   const service = services.find(s => s.id === serviceId)
@@ -37,6 +40,32 @@ const ServiceDetail = () => {
     )
   }
 
+  const canonicalUrl = `${SITE_URL}${location.pathname}`
+  const breadcrumbsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: `${SITE_URL}/`
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Servicios',
+        item: `${SITE_URL}/servicios`
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: service.name,
+        item: canonicalUrl
+      }
+    ]
+  }
+
   const IconComponent = Icons[service.icon] || Icons.Sparkles
   
   // Otros servicios para mostrar al final
@@ -44,6 +73,20 @@ const ServiceDetail = () => {
 
   return (
     <div className="pt-16">
+      <Helmet>
+        <title>{`${service.name} | Espacio Dérmico`}</title>
+        <meta name="description" content={service.shortDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${service.name} | Espacio Dérmico`} />
+        <meta property="og:description" content={service.shortDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={service.heroImage || service.image} />
+        <meta name="twitter:title" content={`${service.name} | Espacio Dérmico`} />
+        <meta name="twitter:description" content={service.shortDescription} />
+        <meta name="twitter:image" content={service.heroImage || service.image} />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbsJsonLd)}</script>
+      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] max-h-[600px] overflow-hidden">
         {/* Background Image */}

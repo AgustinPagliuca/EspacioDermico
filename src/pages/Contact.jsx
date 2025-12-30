@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { 
   MapPin, 
   Phone, 
@@ -19,6 +20,7 @@ import { contactInfo } from '../data/services'
 
 // Hook
 import { useInView } from '../hooks/useScroll'
+import { useLocation } from 'react-router-dom'
 
 // Animated wrapper
 const AnimatedSection = ({ children, className = '', delay = 0 }) => {
@@ -38,6 +40,9 @@ const AnimatedSection = ({ children, className = '', delay = 0 }) => {
 }
 
 const Contact = () => {
+  const location = useLocation()
+  const SITE_URL = 'https://espaciodermico.com.ar'
+  const canonicalUrl = `${SITE_URL}${location.pathname || '/contacto'}`
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -133,6 +138,19 @@ Mis datos de contacto:
 
   return (
     <div className="pt-24">
+      <Helmet>
+        <title>Contacto | Espacio Dérmico</title>
+        <meta
+          name="description"
+          content="Contactate con Espacio Dérmico en Santos Lugares. Reservá turno por WhatsApp, teléfono o email."
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="Contacto | Espacio Dérmico" />
+        <meta property="og:description" content="Reservá tu turno o consultá por nuestros tratamientos de estética." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta name="twitter:title" content="Contacto | Espacio Dérmico" />
+        <meta name="twitter:description" content="WhatsApp, teléfono y email para consultas y turnos." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 gradient-hero" />

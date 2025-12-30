@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Phone } from 'lucide-react'
 
 // Components
@@ -14,6 +15,7 @@ import { services, contactInfo, aboutInfo } from '../data/services'
 // Hook
 import { useInView } from '../hooks/useScroll'
 import { images } from '../utils/images'
+import { useLocation } from 'react-router-dom'
 
 // Animated wrapper component
 const AnimatedSection = ({ children, className = '', delay = 0 }) => {
@@ -33,8 +35,25 @@ const AnimatedSection = ({ children, className = '', delay = 0 }) => {
 }
 
 const Home = () => {
+  const location = useLocation()
+  const SITE_URL = 'https://espaciodermico.com.ar'
+  const canonicalUrl = `${SITE_URL}${location.pathname || '/'}`
+
   return (
     <div className="overflow-hidden">
+      <Helmet>
+        <title>Espacio Dérmico | Estética, cosmiatría y HIFU en Santos Lugares</title>
+        <meta
+          name="description"
+          content="Tratamientos faciales, HIFU, masajes, depilación y cuidado integral en Santos Lugares. Profesionales en estética y bienestar."
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="Espacio Dérmico | Estética y bienestar" />
+        <meta property="og:description" content="Centro de estética y cosmiatría en Santos Lugares con tratamientos faciales y corporales." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="twitter:title" content="Espacio Dérmico | Estética y bienestar" />
+        <meta property="twitter:description" content="Tratamientos faciales, corporales, manicuría y pedicuría en Santos Lugares." />
+      </Helmet>
       {/* Hero Carousel */}
       <HeroCarousel />
 

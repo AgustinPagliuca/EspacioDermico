@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { Search } from 'lucide-react'
 
 // Components
@@ -11,10 +12,14 @@ import { services } from '../data/services'
 
 // Hook
 import { useInView } from '../hooks/useScroll'
+import { useLocation } from 'react-router-dom'
 
 const Services = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const location = useLocation()
+  const SITE_URL = 'https://espaciodermico.com.ar'
+  const canonicalUrl = `${SITE_URL}${location.pathname || '/servicios'}`
 
   // Categorías únicas
   const categories = [
@@ -37,6 +42,19 @@ const Services = () => {
 
   return (
     <div className="pt-16">
+      <Helmet>
+        <title>Servicios de estética en Santos Lugares | Espacio Dérmico</title>
+        <meta
+          name="description"
+          content="Conocé todos nuestros servicios: cosmiatría, HIFU, masajes, depilación, manicuría, pedicuría y más en Santos Lugares."
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="Servicios de estética | Espacio Dérmico" />
+        <meta property="og:description" content="Tratamientos faciales y corporales profesionales en Santos Lugares." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="twitter:title" content="Servicios de estética | Espacio Dérmico" />
+        <meta property="twitter:description" content="Elegí entre HIFU, masajes, cosmiatría, depilación y más." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         {/* Background */}

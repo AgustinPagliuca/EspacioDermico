@@ -16,6 +16,16 @@
     <title>Espacio Dérmico | Estética & Bienestar</title>
   </head>
   <body>
+    <script>
+      (() => {
+        const params = new URLSearchParams(window.location.search)
+        const redirect = params.get('redirect')
+        if (redirect) {
+          const newUrl = redirect.startsWith('/') ? redirect : `/${redirect}`
+          window.history.replaceState(null, '', newUrl)
+        }
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

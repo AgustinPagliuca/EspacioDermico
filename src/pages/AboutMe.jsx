@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight, Award, Heart, Star, Users } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 
 // Components
 import SectionHeader from '../components/common/SectionHeader'
@@ -30,6 +31,10 @@ const AnimatedSection = ({ children, className = '', delay = 0 }) => {
 }
 
 const AboutMe = () => {
+  const location = useLocation()
+  const SITE_URL = 'https://espaciodermico.com.ar'
+  const canonicalUrl = `${SITE_URL}${location.pathname || '/sobre-mi'}`
+
   const stats = [
     { icon: Users, value: '+1500', label: 'Clientes satisfechos' },
     { icon: Star, value: '+15', label: 'Años de experiencia' },
@@ -39,6 +44,19 @@ const AboutMe = () => {
 
   return (
     <div className="pt-24">
+      <Helmet>
+        <title>Sobre Espacio Dérmico | Estética y bienestar</title>
+        <meta
+          name="description"
+          content="Conocé Espacio Dérmico: experiencia en cosmiatría, HIFU y cuidados de la piel en Santos Lugares."
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="Sobre Espacio Dérmico" />
+        <meta property="og:description" content="Profesionales en estética y bienestar en Santos Lugares." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta name="twitter:title" content="Sobre Espacio Dérmico" />
+        <meta name="twitter:description" content="Trayectoria en cosmiatría y tratamientos faciales y corporales." />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 gradient-hero" />

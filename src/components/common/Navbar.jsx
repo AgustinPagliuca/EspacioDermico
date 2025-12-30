@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
 import { useScroll } from '../../hooks/useScroll'
 
@@ -27,6 +27,7 @@ const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const { scrolled } = useScroll(SCROLL_THRESHOLD)
   const location = useLocation()
+  const navigate = useNavigate()
 
   const isHomePage = location.pathname === HOME_PATH
 
@@ -74,11 +75,9 @@ const Navbar = () => {
   // Ir a inicio y scroll al top
   const goToHomeAndScroll = () => {
     if (isHomePage) {
-      // Si ya estamos en inicio, solo scroll
       window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
-      // Con HashRouter, cambiamos el hash para navegar a la ruta raíz
-      window.location.hash = '#/'
+      navigate('/')
     }
   }
 
