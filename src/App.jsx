@@ -1,6 +1,7 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { useScrollToTop } from './hooks/useScrollToTop'
+import { useEffect } from 'react'
 
 // Layout components
 import Navbar from './components/common/Navbar'
@@ -20,7 +21,17 @@ const SITE_URL = 'https://espaciodermico.com.ar'
 function App() {
   useScrollToTop()
   const location = useLocation()
+  const navigate = useNavigate()
   const canonicalUrl = `${SITE_URL}${location.pathname || '/'}`
+
+  // Handle redirects from 404.html
+  useEffect(() => {
+    const redirectPath = sessionStorage.getItem('redirectPath')
+    if (redirectPath && redirectPath !== '/' && redirectPath !== location.pathname) {
+      sessionStorage.removeItem('redirectPath')
+      navigate(redirectPath, { replace: true })
+    }
+  }, [location.pathname, navigate])
 
   const localBusinessJsonLd = {
     '@context': 'https://schema.org',

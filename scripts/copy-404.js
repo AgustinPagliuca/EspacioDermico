@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+import { readFileSync, writeFileSync } from 'fs';
+import { join } from 'path';
+
+// Read the built index.html to extract the compiled asset filenames
+const distIndexPath = join(process.cwd(), 'dist', 'index.html');
+const indexHtml = readFileSync(distIndexPath, 'utf-8');
+
+// Extract the JS and CSS asset filenames
+const jsMatch = indexHtml.match(/src="\/assets\/(index-[^"]+\.js)"/);
+const cssMatch = indexHtml.match(/href="\/assets\/(index-[^"]+\.css)"/);
+
+if (!jsMatch || !cssMatch) {
+  console.error('Could not find asset filenames in index.html');
+  process.exit(1);
+}
+
+const jsFile = jsMatch[1];
+const cssFile = cssMatch[1];
+
+// Create the 404.html content
+const html404 = `<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -19,9 +39,19 @@
       // Store the original path for React Router
       sessionStorage.setItem('redirectPath', window.location.pathname + window.location.search + window.location.hash);
     </script>
+    <script type="module" crossorigin src="/assets/${jsFile}"></script>
+    <link rel="stylesheet" crossorigin href="/assets/${cssFile}">
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+`;
+
+// Write the 404.html to dist
+const dist404Path = join(process.cwd(), 'dist', '404.html');
+writeFileSync(dist404Path, html404, 'utf-8');
+
+console.log('✓ 404.html created successfully in dist/ with compiled assets');
+console.log(`  JS: ${jsFile}`);
+console.log(`  CSS: ${cssFile}`);
