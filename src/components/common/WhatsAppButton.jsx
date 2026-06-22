@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { X } from 'lucide-react'
 import { contactInfo } from '../../data/services'
+import { trackContacto } from '../../utils/gtag'
 
 const WhatsAppButton = () => {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -51,6 +52,7 @@ const WhatsAppButton = () => {
                 href={contactInfo.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackContacto()}
                 className="block px-4 py-3 rounded-xl bg-gray-50 hover:bg-primary-50 
                            text-gray-700 hover:text-primary-600 transition-colors text-sm font-medium"
               >
@@ -64,6 +66,7 @@ const WhatsAppButton = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContacto()}
               className="block text-center text-sm text-primary-500 hover:text-primary-600 font-medium"
             >
               O escríbenos directamente →

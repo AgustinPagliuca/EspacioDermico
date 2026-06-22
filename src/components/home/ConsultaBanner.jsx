@@ -1,6 +1,7 @@
 import { MessageCircle } from 'lucide-react'
 import { contactInfo } from '../../data/services'
 import { useInView } from '../../hooks/useScroll'
+import { trackContacto } from '../../utils/gtag'
 
 const ConsultaBanner = () => {
   const { ref, isVisible } = useInView()
@@ -30,6 +31,7 @@ const ConsultaBanner = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackContacto()}
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary-600 
                          font-medium rounded-full transition-all hover:shadow-lg"
             >

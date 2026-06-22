@@ -18,6 +18,9 @@ import SectionHeader from '../components/common/SectionHeader'
 // Data
 import { contactInfo } from '../data/services'
 
+// Conversiones
+import { trackContacto } from '../utils/gtag'
+
 // Hook
 import { useInView } from '../hooks/useScroll'
 import { useLocation } from 'react-router-dom'
@@ -70,6 +73,9 @@ ${formData.message}
 Mis datos de contacto:
 📧 ${formData.email}
 📞 ${formData.phone}`
+
+    // Registrar conversión de contacto (envío de formulario → WhatsApp)
+    trackContacto()
 
     // Abrir WhatsApp con el mensaje
     window.open(
@@ -349,6 +355,7 @@ Mis datos de contacto:
                     href={contactInfo.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackContacto()}
                     className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#25D366] font-semibold rounded-full hover:shadow-lg transition-all duration-300"
                   >
                     Abrir WhatsApp
